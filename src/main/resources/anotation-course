@@ -1,0 +1,73 @@
+As requisições HTTP são usadas para comunicação entre clientes e servidores na web e suas funcionalidades
+
+1. GET
+    Função: Recuperar informações de um servidor.
+    Uso típico: Usado para ler ou obter dados de um recurso sem modificar o estado do servidor.
+        Características:
+            Não possui corpo de requisição (os parâmetros são passados na URL).
+            É considerada uma operação segura, pois não altera o estado dos dados no servidor.
+            Cacheável e idempotente (repetir a requisição não altera o estado do servidor).
+Exemplo: Um navegador fazendo uma requisição para exibir uma página da web.
+
+2. POST
+    Função: Enviar dados para o servidor para criar um novo recurso ou processar informações.
+    Uso típico: Usado para submeter dados ao servidor, como em formulários, envio de arquivos, ou criação de novos registros em um banco de dados.
+        Características:
+            Possui corpo de requisição, onde os dados são enviados (como JSON, XML, ou dados de formulário).
+            Não é idempotente (repetir a requisição pode criar múltiplos recursos).
+            Frequentemente usado para operações que modificam dados.
+Exemplo: Enviar um formulário de cadastro.
+
+3. PUT
+    Função: Enviar dados para o servidor para atualizar ou substituir um recurso existente.
+    Uso típico: Usado para modificar ou atualizar recursos existentes no servidor, substituindo completamente o recurso com os novos dados.
+        Características:
+            Envia os dados no corpo da requisição.
+            É idempotente (repetir a requisição resulta no mesmo estado).
+Exemplo: Atualizar informações de um usuário em um sistema.
+
+4. PATCH
+    Função: Atualizar parcialmente um recurso existente no servidor.
+    Uso típico: Usado quando apenas algumas partes de um recurso precisam ser modificadas, sem substituir o recurso completo.
+        Características:
+            Envia apenas os campos que precisam ser atualizados no corpo da requisição.
+            É idempotente, desde que a requisição seja projetada corretamente.
+Exemplo: Atualizar o nome de um usuário sem alterar os outros campos.
+
+5. DELETE
+    Função: Remover um recurso do servidor.
+    Uso típico: Usado para deletar ou remover um recurso específico.
+        Características:
+            Pode ou não ter um corpo de requisição.
+            É idempotente (deletar repetidamente o mesmo recurso não causará mudanças adicionais).
+Exemplo: Excluir um registro em um banco de dados.
+
+6. HEAD
+    Função: Semelhante ao GET, mas retorna apenas os headers (cabeçalhos) da resposta, sem o corpo.
+    Uso típico: Usado para verificar o status de um recurso ou checar metadados, como tamanho ou tipo de conteúdo, sem precisar transferir os dados completos.
+Exemplo: Checar se um arquivo em um servidor existe e obter suas informações de cabeçalho.
+
+7. OPTIONS
+    Função: Retorna os métodos HTTP suportados pelo servidor para um determinado recurso.
+    Uso típico: Usado principalmente para verificação antes de realizar uma requisição e em negociações de CORS (Cross-Origin Resource Sharing).
+Exemplo: Checar se o servidor suporta métodos como GET, POST ou DELETE para um recurso específico.
+
+8. TRACE
+    Função: Faz uma requisição de volta ao cliente, refletindo o que foi enviado, útil para testes e depuração de requisições.
+    Uso típico: Usado raramente, geralmente para diagnosticar o que acontece com as requisições no caminho entre o cliente e o servidor.
+
+9. CONNECT
+    Função: Utilizado para estabelecer um túnel de comunicação, geralmente para suportar SSL (HTTPS) através de servidores proxy.
+    Uso típico: Comumente usado em navegadores ao acessar sites HTTPS.
+
+Resumo:
+    GET: Obter dados.
+    POST: Enviar dados para criar ou processar algo.
+    PUT: Atualizar ou substituir um recurso.
+    PATCH: Atualizar parcialmente um recurso.
+    DELETE: Remover um recurso.
+    HEAD: Obter apenas os cabeçalhos da resposta.
+    OPTIONS: Verificar métodos permitidos para um recurso.
+    TRACE: Depurar a comunicação HTTP.
+    CONNECT: Criar um túnel para comunicação segura.
+Esses métodos são essenciais no desenvolvimento de APIs RESTful e interações na web.
